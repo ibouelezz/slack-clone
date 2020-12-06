@@ -2,6 +2,8 @@ import "./Message.css";
 import React from "react";
 
 function Message({ message, timestamp, user, userImage }) {
+  console.log(timestamp);
+  console.log(new Date(timestamp?.toDateString()).toUTCString());
   return (
     <div className="message">
       <img src={userImage} alt="" />
@@ -9,7 +11,7 @@ function Message({ message, timestamp, user, userImage }) {
         <h4>
           {user}{" "}
           <span className="message__timestamp">
-            {new Date(timestamp?.toDateString()).toUTCString()}
+            {new Date(timestamp?.toString()).toUTCString()}
           </span>
         </h4>
         <p>{message}</p>
